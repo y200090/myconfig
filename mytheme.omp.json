@@ -1,143 +1,142 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "version": 2,
-    "blocks": [
-      {
-        "type": "prompt",
-        "alignment": "left",
-        "segments": [
-          {
-            "type": "executiontime",
-            "style": "diamond",
-            "leading_diamond": "\ue0b2",
-            "trailing_diamond": "\ue0b0\n",
-            "foreground": "#d6deeb",
-            "background": "#575656",
-            "properties": {
-              "style": "austin",
-              "threshold": 1
-            },
-            "template": " \ufbab\u2800{{ .FormattedMs }}\u2800"
-          }
-        ]
-      },
-      {
-        "type": "prompt",
-        "alignment": "left",
-        "newline": true,
-        "segments": [
-          {
-            "type": "os",
-            "style": "diamond",
-            "leading_diamond": "\ue0b2",
-            "foreground": "#011627",
-            "background": "#FEF5ED",
-            "properties": {
-              "alpine": "\uf300",
-              "arch": "\uf303",
-              "centos": "\uf304",
-              "debian": "\uf306",
-              "elementary": "\uf309",
-              "fedora": "\uf30a",
-              "gentoo": "\uf30d",
-              "linux": "\ue712",
-              "macos": "\ue711",
-              "manjaro": "\uf312",
-              "mint": "\uf30f",
-              "opensuse": "\uf314",
-              "raspbian": "\uf315",
-              "ubuntu": "\uf31c",
-              "windows": "\ue62a",
-              "wsl": "\ue712"
-            },
-            "template": " {{ .Icon }} "
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0\n",
+          "foreground": "#d6deeb",
+          "background": "#575656",
+          "properties": {
+            "style": "austin",
+            "threshold": 1
           },
-          {
-            "type": "shell",
-            "style": "powerline",
-            "powerline_symbol": "\ue0b0",
-            "foreground": "#011627",
-            "background": "#FEF5ED",
-            "template": "<#000000>\ue0b1</> \ue795 {{ .Name }}"
+          "template": " \ufbab\u2800{{ .FormattedMs }}\u2800"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "foreground": "#011627",
+          "background": "#FEF5ED",
+          "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "windows": "\ue62a",
+            "wsl": "\ue712"
           },
-          {
-            "type": "sysinfo",
-            "style": "powerline",
-            "powerline_symbol": "\ue0b0",
-            "foreground": "#011627",
-            "background": "#FEF5ED",
-            "template": "<#000000>\ue0b1</> \uf85a CPU:{{ round .PhysicalPercentUsed .Precision }}% \uf6dc"
+          "template": " {{ .Icon }} "
+        },
+        {
+          "type": "shell",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#011627",
+          "background": "#FEF5ED",
+          "template": "<#000000>\ue0b1</> \ue795 {{ .Name }}"
+        },
+        {
+          "type": "sysinfo",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#011627",
+          "background": "#FEF5ED",
+          "template": "<#000000>\ue0b1</> \uf85a CPU:{{ round .PhysicalPercentUsed .Precision }}% \uf6dc"
+        },
+        {
+          "type": "sysinfo",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#011627",
+          "background": "#FEF5ED",
+          "template": "RAM:{{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#ff8800",
+          "template": "\u250c\uf508 {{ .UserName }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#0CA0D8",
+          "properties": {
+            "style": "agnoster",
+            "folder_icon": "..",
+            "max_depth": 4
           },
-          {
-            "type": "sysinfo",
-            "style": "powerline",
-            "powerline_symbol": "\ue0b0",
-            "foreground": "#011627",
-            "background": "#FEF5ED",
-            "template": "RAM:{{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB "
-          }
-        ]
-      },
-      {
-        "type": "prompt",
-        "alignment": "left",
-        "newline": true,
-        "segments": [
-          {
-            "type": "session",
-            "style": "plain",
-            "foreground": "#ff8800",
-            "template": "\u250c\uf508 {{ .UserName }}"
+          "template": " <#0CA0D8>in</> \ue5ff {{ .Path }}{{ if .WSL }}/{{ else }}\\{{ end }}"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#6287ff",
+          "properties": {
+            "branch_icon": ""
           },
-          {
-            "type": "path",
-            "style": "plain",
-            "foreground": "#0CA0D8",
-            "properties": {
-              "style": "agnoster",
-              "folder_icon": "..",
-              "max_depth": 4
-            },
-            "template": " <#0CA0D8>in</> \ue5ff {{ .Path }}{{ if .WSL }}/{{ else }}\\{{ end }}"
-          },
-          {
-            "type": "git",
-            "style": "plain",
-            "foreground": "#6287ff",
-            "properties": {
-              "branch_icon": ""
-            },
-            "template": " <#6287ff>on</> git({{ .HEAD }})"
-          },
-          {
-            "type": "python",
-            "style": "plain",
-            "foreground": "#906cff",
-            "template": "{{ if .Venv }} env ({{ .Venv }}){{ end }}"
-          },
-          {
-            "type": "time",
-            "style": "plain",
-            "foreground": "#66F68F",
-            "template": " at \uf64f {{ .CurrentDate | date .Format }}"
-          }
-        ]
-      },
-      {
-        "type": "prompt",
-        "alignment": "left",
-        "newline": true,
-        "segments": [
-          {
-            "type": "text",
-            "style": "plain",
-            "foreground": "#ff8800",
-            "template": "\u2516\u2500\ue602"
-          }
-        ]
-      }
-    ],
-    "osc99": true,
-    "final_space": true
-  }
-  
+          "template": " <#6287ff>on</> git({{ .HEAD }})"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#906cff",
+          "template": "{{ if .Venv }} env ({{ .Venv }}){{ end }}"
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#66F68F",
+          "template": " at \uf64f {{ .CurrentDate | date .Format }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#ff8800",
+          "template": "\u2514\u2500\ue602"
+        }
+      ]
+    }
+  ],
+  "osc99": true,
+  "final_space": true
+}
